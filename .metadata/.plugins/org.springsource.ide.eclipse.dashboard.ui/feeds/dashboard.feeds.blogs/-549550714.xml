@@ -147,7 +147,7 @@ Artem&lt;/p&gt;
     </author>
     <id>tag:spring.io,2022-11-24:5020</id>
     <updated>2022-11-24T21:53:00Z</updated>
-    <content type="html">&lt;p&gt;Hot on the heels of Spring Boot 3.0 GA, it&amp;rsquo;s my pleasure to announce the availability of &lt;a href="https://github.com/spring-projects-experimental/spring-modulith/releases/tag/0.1.0"&gt;Spring Modulith 0.1&lt;/a&gt;. The release concludes the integration of the &lt;a href="https://github.com/moduliths/moduliths"&gt;Moduliths&lt;/a&gt; project into the Spring ecosystem. I want to especially thank &lt;a href="https://github.com/dmbelyaev"&gt;Dmitry Belyaev&lt;/a&gt; and &lt;a href="https://github.com/bkieling"&gt;Bj√∂rn Kieling&lt;/a&gt; who helped a lot during the migration and contributed significant new features to the project, the event publication repository implementations for JDBC and MongoDB in particular.&lt;/p&gt;
+    <content type="html">&lt;p&gt;Hot on the heels of Spring Boot 3.0 GA, it&amp;rsquo;s my pleasure to announce the availability of &lt;a href="https://github.com/spring-projects-experimental/spring-modulith/releases/tag/0.1.0"&gt;Spring Modulith 0.1&lt;/a&gt;. The release concludes the integration of the &lt;a href="https://github.com/moduliths/moduliths"&gt;Moduliths&lt;/a&gt; project into the Spring ecosystem. I want to especially thank &lt;a href="https://github.com/dmbelyaev"&gt;Dmitry Belyaev&lt;/a&gt; and &lt;a href="https://github.com/bkieling"&gt;Bj?rn Kieling&lt;/a&gt; who helped a lot during the migration and contributed significant new features to the project, the event publication repository implementations for JDBC and MongoDB in particular.&lt;/p&gt;
 &lt;p&gt;For a general introduction into the project, please check out the &lt;a href="https://spring.io/blog/2022/10/21/introducing-spring-modulith"&gt;original announcement&lt;/a&gt; and this &lt;a href="https://www.infoq.com/news/2022/11/spring-modulith-launch/"&gt;InfoQ article&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://github.com/spring-projects-experimental/spring-modulith/releases/tag/0.1.0"&gt;Changelog&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-modulith/docs/0.1.0/reference/html/"&gt;Reference documentation&lt;/a&gt;&lt;/p&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
@@ -182,7 +182,7 @@ Artem&lt;/p&gt;
     <link rel="alternate" href="https://spring.io/blog/2022/11/24/spring-boot-2-7-6-available-now" />
     <category term="releases" label="Releases" />
     <author>
-      <name>St√©phane Nicoll</name>
+      <name>St?phane Nicoll</name>
     </author>
     <id>tag:spring.io,2022-11-24:5019</id>
     <updated>2022-11-24T15:13:00Z</updated>
@@ -197,7 +197,7 @@ Artem&lt;/p&gt;
     <link rel="alternate" href="https://spring.io/blog/2022/11/24/spring-framework-6-0-2-available-now" />
     <category term="releases" label="Releases" />
     <author>
-      <name>St√©phane Nicoll</name>
+      <name>St?phane Nicoll</name>
     </author>
     <id>tag:spring.io,2022-11-24:5017</id>
     <updated>2022-11-24T14:38:36Z</updated>
@@ -211,14 +211,14 @@ Artem&lt;/p&gt;
     <link rel="alternate" href="https://spring.io/blog/2022/11/24/spring-boot-2-6-14-available-now" />
     <category term="releases" label="Releases" />
     <author>
-      <name>St√©phane Nicoll</name>
+      <name>St?phane Nicoll</name>
     </author>
     <id>tag:spring.io,2022-11-24:5016</id>
     <updated>2022-11-24T14:17:00Z</updated>
     <content type="html">&lt;p&gt;On behalf of the team and everyone who has contributed, I&amp;rsquo;m happy to announce that Spring Boot &lt;code&gt;2.6.14&lt;/code&gt; has been released and is now available from Maven Central.&lt;/p&gt;
 &lt;p&gt;This release includes &lt;a href="https://github.com/spring-projects/spring-boot/releases/tag/v2.6.14"&gt;39 bug fixes, documentation improvements, and dependency upgrades&lt;/a&gt;. Thanks to all those who have contributed with issue reports and pull requests.&lt;/p&gt;&lt;h3&gt;&lt;a href="#end-of-life" class="anchor" name="end-of-life"&gt;&lt;/a&gt;End of life&lt;/h3&gt;
 &lt;p&gt;It&amp;rsquo;s just over a year since the release of Spring Boot 2.6.0 which means that, &lt;a href="https://spring.io/projects/spring-boot#support"&gt;as per our open source support policy&lt;/a&gt;, 2.6.14 is the last release that&amp;rsquo;s planned in the 2.6.x line. Releases may be made in the future, but only in response to a &lt;a href="https://tanzu.vmware.com/spring-runtime"&gt;commercial support&lt;/a&gt; request.&lt;/p&gt;
-&lt;p&gt;As &lt;a href="https://spring.io/blog/2022/05/24/preparing-for-spring-boot-3-0"&gt;previously announced&lt;/a&gt;, Spring Boot 2.7 will be the last minor in the 2.x line. As such, we‚Äôve extended our open source support for 2.7.x release by an additional 6 months until November 2023. In addition, &lt;a href="https://tanzu.vmware.com/spring-runtime"&gt;commercial support&lt;/a&gt; for Spring Boot 2.7 has also been extended and is available until February 2025.&lt;/p&gt;&lt;h3&gt;&lt;a href="#how-can-you-help" class="anchor" name="how-can-you-help"&gt;&lt;/a&gt;How can you help?&lt;/h3&gt;
+&lt;p&gt;As &lt;a href="https://spring.io/blog/2022/05/24/preparing-for-spring-boot-3-0"&gt;previously announced&lt;/a&gt;, Spring Boot 2.7 will be the last minor in the 2.x line. As such, we°Øve extended our open source support for 2.7.x release by an additional 6 months until November 2023. In addition, &lt;a href="https://tanzu.vmware.com/spring-runtime"&gt;commercial support&lt;/a&gt; for Spring Boot 2.7 has also been extended and is available until February 2025.&lt;/p&gt;&lt;h3&gt;&lt;a href="#how-can-you-help" class="anchor" name="how-can-you-help"&gt;&lt;/a&gt;How can you help?&lt;/h3&gt;
 &lt;p&gt;If you&amp;rsquo;re interested in helping out, check out the &lt;a href="https://github.com/spring-projects/spring-boot/labels/status%3A%20ideal-for-contribution"&gt;&amp;ldquo;ideal for contribution&amp;rdquo; tag&lt;/a&gt; in the issue repository. If you have general questions, please ask on &lt;a href="https://stackoverflow.com"&gt;stackoverflow.com&lt;/a&gt; using the &lt;a href="https://stackoverflow.com/tags/spring-boot"&gt;&lt;code&gt;spring-boot&lt;/code&gt; tag&lt;/a&gt; or chat with the community on &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://spring.io/projects/spring-boot/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot/issues"&gt;Issues&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-boot/docs/2.6.14/reference/html"&gt;Documentation&lt;/a&gt; | &lt;a href="https://stackoverflow.com/questions/tagged/spring-boot"&gt;Stack Overflow&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;&lt;/p&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
@@ -485,7 +485,7 @@ class MyJobConfiguration extends DefaultBatchConfiguration {&#xD;
     <link rel="alternate" href="https://spring.io/blog/2022/11/23/spring-framework-6-0-1-available-now" />
     <category term="releases" label="Releases" />
     <author>
-      <name>St√©phane Nicoll</name>
+      <name>St?phane Nicoll</name>
     </author>
     <id>tag:spring.io,2022-11-23:5014</id>
     <updated>2022-11-23T10:50:08Z</updated>
@@ -582,7 +582,7 @@ class MyJobConfiguration extends DefaultBatchConfiguration {&#xD;
   &lt;li&gt;&lt;a href="https://spring.io/blog/2022/11/21/spring-security-5-8-and-6-0-are-now-ga"&gt;Spring Security 5.8 and 6.0 are now GA&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href="https://spring.io/blog/2022/11/21/spring-web-services-4-0-0-is-now-ga"&gt;Spring Web Services 4.0.0 is now GA&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href="https://spring.io/blog/2022/11/22/spring-for-graphql-1-0-3-released"&gt;Spring for GraphQL 1.0.3 released&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://feeds.feedblitz.com/~/719774110/0/baeldung~Kafkas-Shift-from-ZooKeeper-to-Kraft"&gt;Kafka‚Äôs Shift from ZooKeeper to Kraft&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://feeds.feedblitz.com/~/719774110/0/baeldung~Kafkas-Shift-from-ZooKeeper-to-Kraft"&gt;Kafka°Øs Shift from ZooKeeper to Kraft&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href="https://kubernetes.io/blog/2022/11/18/upcoming-changes-in-kubernetes-1-26/"&gt;Blog: Kubernetes Removals, Deprecations, and Major Changes in 1.26&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
@@ -722,7 +722,7 @@ class MyJobConfiguration extends DefaultBatchConfiguration {&#xD;
 &lt;p&gt;On behalf of the team and everyone who has contributed, we are very excited to announce the general availability of Spring Security 6.0! In addition, we are pleased to announce the general availability of Spring Security 5.8, which is provided to simplify upgrading to 6.0.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="paragraph"&gt;
-&lt;p&gt;The &lt;a href="https://github.com/spring-projects/spring-security/releases/tag/5.8.0"&gt;5.8 release&lt;/a&gt; brings numerous enhancements, such as session handling improvements, expanded support for the &lt;code&gt;AuthorizationManager&lt;/code&gt; API, and additional defense in-depth with support for CSRF BREACH. Check out &lt;a href="https://docs.spring.io/spring-security/reference/5.8/whats-new.html"&gt;What‚Äôs New in Spring Security 5.8&lt;/a&gt; for a list of new features available in the release.&lt;/p&gt;
+&lt;p&gt;The &lt;a href="https://github.com/spring-projects/spring-security/releases/tag/5.8.0"&gt;5.8 release&lt;/a&gt; brings numerous enhancements, such as session handling improvements, expanded support for the &lt;code&gt;AuthorizationManager&lt;/code&gt; API, and additional defense in-depth with support for CSRF BREACH. Check out &lt;a href="https://docs.spring.io/spring-security/reference/5.8/whats-new.html"&gt;What°Øs New in Spring Security 5.8&lt;/a&gt; for a list of new features available in the release.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="paragraph"&gt;
 &lt;p&gt;The &lt;a href="https://github.com/spring-projects/spring-security/releases/tag/6.0.0"&gt;6.0 release&lt;/a&gt; adds integration with Spring Observability and works with support for AOT processing provided by Spring Framework 6. Check out &lt;a href="https://docs.spring.io/spring-security/reference/whats-new.html"&gt;What&amp;#8217;s New in Spring Security 6.0&lt;/a&gt; for a list of new features available in the release.&lt;/p&gt;
