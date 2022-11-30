@@ -6,8 +6,6 @@ public class TargetVO {
 	private int medi;
 	private int leis;
 	private int ets;
-	private String tpaydate;
-	
 	public int getFood() {
 		return food;
 	}
@@ -38,18 +36,10 @@ public class TargetVO {
 	public void setEts(int ets) {
 		this.ets = ets;
 	}
-	public String getTpaydate() {
-		return tpaydate;
-	}
-	public void setTpaydate(String tpaydate) {
-		this.tpaydate = tpaydate;
-	}
 	@Override
 	public String toString() {
 		return "TargetVO [food=" + food + ", trans=" + trans + ", medi=" + medi + ", leis=" + leis + ", ets=" + ets
-				+ ", tpaydate=" + tpaydate + "]";
+				+ "]";
 	}
-	
-	
 	
 }
