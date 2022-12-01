@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.chartMapper">
+<select id = "getWomenCount" resultType="int">
+select count(*) from almom.user where user_sex = 0;
+
+</select>
+<select id = "getMenCount" resultType="int">
+select count(*) from almom.user where user_sex = 1;
+</select>
+</mapper>

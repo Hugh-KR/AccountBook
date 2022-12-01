@@ -1,0 +1,10 @@
+package com.multi.mvc;
+
+import java.util.List;
+
+public interface GraphService {
+	
+	// 거북목 카운트
+	public List<GraphVO> countTurtle(GraphVO vo) throws Exception;
+	
+}

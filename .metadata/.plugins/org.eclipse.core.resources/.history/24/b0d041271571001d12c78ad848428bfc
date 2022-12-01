@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.GraphService">
+	<select id="countTurtle" resultType="city.turtle.vo.GraphVO">
+        select * from POSTURE 
+        where mb_id=#{mb_id} and pos_type=#{pos_type} 
+        and pos_time between DATE_SUB(NOW(), INTERVAL 7 DAY) and NOW() 
+        order by pos_time;        
+    </select>
+</mapper>

@@ -2,16 +2,14 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
-	
+
 	<!-- Root Context: defines shared resources visible to all other web components -->
 	<!-- 싱글톤으로 만드는 설정.. -->
 	<!--DBCP dbcp = new DBCP(); -->
 	<!-- DB프로그래밍의 1-2번을 해주는 클래스를 싱글톤 생성. -->
 	<bean id="dbcp" class="org.apache.commons.dbcp.BasicDataSource">
-		<property name="driverClassName"
-			value="org.gjt.mm.mysql.Driver"></property>
-		<property name="url"
-			value="jdbc:mysql://localhost:3306/mydb?characterEncoding=UTF-8"></property>
+		<property name="driverClassName" value="org.gjt.mm.mysql.Driver"></property>
+		<property name="url" value="jdbc:mysql://localhost:3306/mydb?characterEncoding=UTF-8"></property>
 		<property name="username" value="abcd"></property>
 		<property name="password" value="12345678"></property>
 	</bean>
@@ -30,5 +28,5 @@
 	<bean id="my" class="org.mybatis.spring.SqlSessionTemplate">
 		<constructor-arg ref="config"></constructor-arg>
 	</bean>
-		
+	
 </beans>

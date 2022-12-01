@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<resultMap type="java.util.HashMap" id="statistics">
+
+	<result javaType="java.lang.String" property="statsDate" column="date"></result>
+
+	<result javaType="java.lang.String" property="statsAmount" column="amount"></result>
+
+</resultMap>
