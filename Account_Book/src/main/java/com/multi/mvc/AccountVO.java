@@ -1,17 +1,20 @@
 package com.multi.mvc;
 
 public class AccountVO {
-	private String date;
+	private String paydate;
 	private String payment;
 	private String category;
 	private int amount;
 	private String memo;
+	private int deposit;
+	private int withdraw;
 	
-	public String getDate() {
-		return date;
+	
+	public String getPaydate() {
+		return paydate;
 	}
-	public void setDate(String date) {
-		this.date = date;
+	public void setPaydate(String paydate) {
+		this.paydate = paydate;
 	}
 	public String getPayment() {
 		return payment;
@@ -37,9 +40,22 @@ public class AccountVO {
 	public void setMemo(String memo) {
 		this.memo = memo;
 	}
+	
+	public int getDeposit() {
+		return deposit;
+	}
+	public void setDeposit(int deposit) {
+		this.deposit = deposit;
+	}
+	public int getWithdraw() {
+		return withdraw;
+	}
+	public void setWithdraw(int withdraw) {
+		this.withdraw = withdraw;
+	}
 	@Override
 	public String toString() {
-		return "AccountVO [date=" + date + ", payment=" + payment + ", category=" + category + ", amount=" + amount
+		return "AccountVO [payment=" + payment + ", category=" + category + ", amount=" + amount
 				+ ", memo=" + memo + "]";
 	}
 	

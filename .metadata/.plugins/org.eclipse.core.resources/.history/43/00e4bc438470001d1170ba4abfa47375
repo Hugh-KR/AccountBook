@@ -1,0 +1,26 @@
+package com.multi.mvc;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class AccountController {
+	@Autowired
+	AccountDAO dao;
+	
+	@RequestMapping("deposit")	
+	public void deposit(AccountVO vo, Model model) {
+		AccountVO result = dao.deposit(vo);
+		model.addAttribute("vo",result);	
+	}
+	
+	@RequestMapping("withdraw")	
+	public void deposit(AccountVO vo, Model model) {
+		AccountVO result = dao.deposit(vo);
+		model.addAttribute("vo",result);	
+	}
+	
+	
+}

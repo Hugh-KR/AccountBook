@@ -7,6 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-hello
+<form action="statistics">
+<button>통계확인</button>
+</form>
 </body>
 </html>
