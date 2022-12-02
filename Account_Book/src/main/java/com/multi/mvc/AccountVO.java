@@ -1,23 +1,23 @@
 package com.multi.mvc;
 
 public class AccountVO {
-	private String date;
-	private String payment;
+	private String paydate;
+	private String payselect;
 	private String category;
 	private int amount;
 	private String memo;
 	
-	public String getDate() {
-		return date;
+	public String getPaydate() {
+		return paydate;
 	}
-	public void setDate(String date) {
-		this.date = date;
+	public void setPaydate(String paydate) {
+		this.paydate = paydate;
 	}
-	public String getPayment() {
-		return payment;
+	public String getPayselect() {
+		return payselect;
 	}
-	public void setPayment(String payment) {
-		this.payment = payment;
+	public void setPayselect(String payselect) {
+		this.payselect = payselect;
 	}
 	public String getCategory() {
 		return category;
@@ -37,11 +37,4 @@ public class AccountVO {
 	public void setMemo(String memo) {
 		this.memo = memo;
 	}
-	@Override
-	public String toString() {
-		return "AccountVO [date=" + date + ", payment=" + payment + ", category=" + category + ", amount=" + amount
-				+ ", memo=" + memo + "]";
-	}
-	
-	
 }

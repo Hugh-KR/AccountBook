@@ -1,3 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="mapper.accountMapper"></mapper>
+<mapper namespace="accountMapper">
+	<insert id="create" parameterType="accountVO">
+		insert into accountbook values (#{paydate}, #{payselect}, #{category}, #{amount}, #{memo})
+	</insert>
+	<select id="all" resultType="accountVO">
+		select * from accountbook
+	</select>
+	<select id="all_income" resultType="accountVO">
+		select * from accountbook where payselect='수입'
+	</select>
+	<select id="all_expense" resultType="accountVO">
+		select * from accountbook where payselect='지출'
+	</select>
+</mapper>
