@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="purpose">
+	<insert id = "create" parameterType="purposeVO">
+		insert into purpose values (#{food}, #{trans}, #{medi}, #{leis}, #{etc}, #{month})
+	</insert>
+	<insert id = "update" parameterType="purposeVO">
+		update purpose set food = #{food}, trans = #{trans}, medi = #{medi}, leis = #{leis}, etc = #{etc} where month = #{month}
+	</insert>
+	<insert id = "delete" parameterType="purposeVO">
+		delete from purpose where month = #{month}
+	</insert>
+	<select id = "search" resultType="purposeVO" parameterType="purposeVO">
+		select * from purpose where month = #{month}
+	</select>
+	<select id = "confirm" resultType="int" parameterType="int">
+		select month from purpose where month = #{month}
+	</select>
+	
+</mapper>
+
+
+

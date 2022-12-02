@@ -1,12 +1,12 @@
 package com.multi.mvc;
 
-public class TargetVO {
+public class PurposeVO {
 	private int food;
 	private int trans;
 	private int medi;
 	private int leis;
-	private int ets;
-	private String tpaydate;
+	private int etc;
+	private int month;
 	
 	public int getFood() {
 		return food;
@@ -32,24 +32,24 @@ public class TargetVO {
 	public void setLeis(int leis) {
 		this.leis = leis;
 	}
-	public int getEts() {
-		return ets;
+	public int getEtc() {
+		return etc;
 	}
-	public void setEts(int ets) {
-		this.ets = ets;
+	public void setEtc(int etc) {
+		this.etc = etc;
 	}
-	public String getTpaydate() {
-		return tpaydate;
+	public int getMonth() {
+		return month;
 	}
-	public void setTpaydate(String tpaydate) {
-		this.tpaydate = tpaydate;
-	}
-	@Override
-	public String toString() {
-		return "TargetVO [food=" + food + ", trans=" + trans + ", medi=" + medi + ", leis=" + leis + ", ets=" + ets
-				+ ", tpaydate=" + tpaydate + "]";
+	public void setMonth(int month) {
+		this.month = month;
 	}
 	
+	@Override
+	public String toString() {
+		return "PurposeVO [food=" + food + ", trans=" + trans + ", medi=" + medi + ", leis=" + leis + ", etc=" + etc + ", month=" + month
+				+ "]";
+	}
 	
 	
 }
