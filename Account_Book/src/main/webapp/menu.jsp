@@ -9,25 +9,6 @@
 <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
 <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-straight/css/uicons-regular-straight.css'>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-<style>
-	ul.tab-ul li{
-		margin-top: 50px;
-		margin-right: 20px;
-		padding: 10px;
-	 	font-size: 20px;
-	 	color: black;
-	 	list-style: none;
-	}
-	ul.tab-ul li a{
-		color: black;
-	}
-	ul.tab-ul li.active{
-		background: #2C952C;
-		border-radius: 5px;
-		color: white;
-	}
-}
-</style>
 <script>
 /* 메뉴 클릭 시 이벤트 -> 해당 메뉴에 대한 content 출력 */
 $(function ($) {
