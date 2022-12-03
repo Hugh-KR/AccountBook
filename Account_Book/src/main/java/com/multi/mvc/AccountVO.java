@@ -1,12 +1,19 @@
 package com.multi.mvc;
 
 public class AccountVO {
+	private int id;
 	private String paydate;
 	private String payselect;
 	private String category;
 	private int amount;
 	private String memo;
 	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	public String getPaydate() {
 		return paydate;
 	}

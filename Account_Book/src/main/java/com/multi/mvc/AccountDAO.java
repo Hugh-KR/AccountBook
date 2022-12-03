@@ -26,4 +26,17 @@ public class AccountDAO {
 	public List<AccountVO> all_expense(){
 		return my.selectList("accountMapper.all_expense");
 	}
+	
+	public void update(AccountVO vo) {
+		my.update("accountMapper.up", vo);
+	}
+	
+	public void delete(AccountVO vo) {
+		my.delete("accountMapper.del", vo);
+	}
+	/*
+	 * public List<AccountVO> all_click(AccountVO vo){ return
+	 * my.selectList("accountMapper.all_click"); }
+	 */
+	
 }

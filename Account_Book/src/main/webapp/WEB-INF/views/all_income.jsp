@@ -52,6 +52,26 @@
 			}
 		});
 	});
+	/* 테이블 행 클릭 시 이벤트 -> 오른쪽 테이블에 클릭한 행 값들 삽입 */
+	$(function () {
+		$('#tableList tr').click(function() {  // 테이블 행 클릭 시
+			var idVal = $(this).find("td:eq(0)").text();  // 클릭한 행의 id 값 idVal에 저장
+			var paydateVal = $(this).find("td:eq(1)").text();  // 클릭한 행의 날짜 값 paydateVal에 저장
+			var memoVal = $(this).find("td:eq(2)").text();
+			var amountVal = $(this).find("td:eq(3)").text();
+			//alert(paydateVal + " " + memoVal + " " + amountVal);
+			
+			var amount = amountVal.replaceAll(",", "");  // amountVal 값 콤마 없애기
+			
+			$('#id').attr('value', idVal);
+			$('#paydate').attr('value', paydateVal);  // 날짜 input value에 paydateVal 값 넣기
+			$('#memo').attr('value', memoVal);  // 내용 input value에 memoVal 값 넣기
+			$('#amount').attr('value', amount);  // 금액 input value에 amountVal 값 넣기
+			
+			$('#idDel').attr('value', idVal);  // delete 버튼이 있는 form input에 삭제할 id setting
+		})
+		
+	})
 </script>
 </head>
 <body>
@@ -62,12 +82,9 @@
 				<i class="fi fi-rr-money-check-edit"></i>가계부
 			</h2>
 			<ul class="tab-ul">
-				<li class="active"><a id="tab1"><i class="fi fi-rr-add"></i>수입/지출
-						관리</a></li>
-				<li><a id="tab2"><i class="fi fi-rs-calendar-check"></i>캘린더</a>
-				</li>
-				<li><a id="tab3"><i class="fi fi-rs-chart-histogram"></i>통계</a>
-				</li>
+				<li class="active"><a id="tab1"><i class="fi fi-rr-add"></i>수입/지출 관리</a></li>
+				<li><a id="tab2"><i class="fi fi-rs-calendar-check"></i>캘린더</a></li>
+				<li><a id="tab3"><i class="fi fi-rs-chart-histogram"></i>통계</a></li>
 				<li><a id="tab4"><i class="fi fi-rr-coins"></i>목표 지출</a></li>
 			</ul>
 		</div>
@@ -80,72 +97,15 @@
 				</h4>
 				<hr style="width: 1700px;">
 				<br>
-				<div class="row" style="width: 1700px;">
-					<div class="col-md-6">
-						<form action="insert_account.multi" style="margin-left: 30px;">
-							<table style="width: 500px;">
-								<tr>
-									<td style="width: 100px;">날짜</td>
-									<td><input type="date" class="form-control no-line" name="paydate"
-										style="height: 50px;"></td>
-								</tr>
-							</table>
-							<br> <br>
-							<table style="width: 500px;">
-								<tr>
-									<td style="width: 100px;">분류</td>
-									<td>
-									<td><label class="radio-inline"
-										style="margin-right: 100px;"> <input type="radio"
-											name="payselect" id="radio1" value="수입" checked> 수입
-									</label> <label class="radio-inline"> <input type="radio"
-											id="radio2" value="지출" name="payselect"> 지출
-									</label></td>
-								</tr>
-							</table>
-							<br> <br>
-							<table style="width: 500px;">
-								<tr>
-									<td style="width: 100px;">카테고리</td>
-									<td><select name="category" class="custom-select no-line">
-											<option selected></option>
-											<option value="food">식비</option>
-											<option value="trans">교통비</option>
-											<option value="medi">의료비</option>
-											<option value="lels">여가</option>
-											<option value="etc">기타</option>
-									</select></td>
-								</tr>
-							</table>
-							<br> <br>
-							<table style="width: 500px;">
-								<tr>
-									<td style="width: 100px;">금액</td>
-									<td><input type="text" class="form-control no-line" name="amount"></td>
-								</tr>
-							</table>
-							<br> <br>
-							<table style="width: 500px;">
-								<tr>
-									<td style="width: 100px;">내용</td>
-									<td><input type="text" class="form-control no-line" name="memo"></td>
-								</tr>
-							</table>
-							<br> <br>
-							<div style="float: left;">
-								<button type="reset" class="btn-outline-green" style="width: 150px;">취소</button>
-								<button type="submit" class="btn-green" style="width: 330px;">추가</button>
-							</div>
-						</form>
-					</div>
+					<div class="row" style="width: 1700px;">
+					<!-- 왼쪽 div (수입/지출 select) -->
 					<div class="col-md-6">
 						<ul class="tab-ul2">
 							<li style="float: left; margin-right: 0; width: 150px; text-align: center;"><a>전체</a></li>
 							<li style="float: left; margin-right: 0; width: 150px; text-align: center;" class="active2"><a>수입</a></li>
 							<li style="float: left; margin-right: 0; width: 150px; text-align: center;"><a>지출</a></li>
 						</ul>
-						<div class="content"
-							style="overflow: sroll; width: 600px; height: 750px;">
+						<div class="content" style="width: 600px; height: 750px;">
 							<div class="tab-content2">
 								<!-- 수입 리스트 -->
 								<br>
@@ -160,9 +120,17 @@
 								%>
 								<h1><fmt:formatNumber value="<%= total %>" pattern="#,###"/></h1>
 								<br>
-								<table class="table table-hover">
+								<table>
+									<tr>
+										<td><input type="text" class="form-control" placeholder="YYYY-MM"></td>
+										<td><button class="btn-green" style="width: 80px; height: 38px;">선택</button></td>
+									</tr>
+								</table> <br>
+								<div style="height: 600px; overflow: auto;">
+								<table class="table table-hover" id=tableList>
 									<thead>
 										<tr>
+											<th>No</th>
 											<th>날짜</th>
 											<th>내용</th>
 											<th>금액</th>
@@ -171,6 +139,7 @@
 									<tbody>
 										<c:forEach var="vo" items="${list}">
 											<tr>
+												<td>${vo.id}</td>
 												<td>${vo.paydate}</td>
 												<td>${vo.memo}</td>
 												<td><fmt:formatNumber value="${vo.amount}" pattern="#,###"/></td> <!-- 숫자 세 자리 단위로 콤마 찍기 -->
@@ -178,28 +147,146 @@
 										</c:forEach>
 									</tbody>
 								</table>
-
+								</div>
+								<br>
 							</div>
 						</div>
 						<br>
-						<div style="float: left; margin-left: 45px;">
-							<button class="btn-green">수정</button>
-							<button class="btn-green" style="width: 240px;">삭제</button>
+					</div>
+					<!-- 오른쪽 div (수입/지출 등록) -->
+					<div class="col-md-6">
+						<h4 style="margin-left: 30px; font-weight: bold;">수입 / 지출 추가</h4>
+						<form action="insert_account.multi" style="margin-left: 30px;">
+							<table style="width: 500px;">
+								<tr>
+									<td style="width: 100px;">날짜</td>
+									<td><input type="date" class="form-control no-line" name="paydate"
+										style="height: 50px;"></td>
+								</tr>
+							</table>
+							<br>
+							<table style="width: 500px;">
+								<tr>
+									<td style="width: 100px;">분류</td>
+									<td>
+									<td><label class="radio-inline"
+										style="margin-right: 100px;"> <input type="radio"
+											name="payselect" id="radio1" value="수입" checked> 수입
+									</label> <label class="radio-inline"> <input type="radio"
+											name="payselect" id="radio2" value="지출"> 지출
+									</label></td>
+								</tr>
+							</table>
+							<br>
+							<table style="width: 500px;">
+								<tr>
+									<td style="width: 100px;">카테고리</td>
+									<td><select name="category" class="custom-select no-line">
+											<option selected></option>
+											<option value="food">식비</option>
+											<option value="trans">교통비</option>
+											<option value="medi">의료비</option>
+											<option value="lels">여가</option>
+											<option value="etc">기타</option>
+									</select></td>
+								</tr>
+							</table>
+							<br>
+							<table style="width: 500px;">
+								<tr>
+									<td style="width: 100px;">금액</td>
+									<td><input type="text" class="form-control no-line" name="amount"></td>
+								</tr>
+							</table>
+							<br>
+							<table style="width: 500px;">
+								<tr>
+									<td style="width: 100px;">내용</td>
+									<td><input type="text" class="form-control no-line" name="memo"></td>
+								</tr>
+							</table>
+							<br> 
+							<div style="float: left;">
+								<button type="reset" class="btn-outline-green" style="width: 150px;">취소</button>
+								<button type="submit" class="btn-green" style="width: 330px;">추가</button>
+							</div>
+						</form>
+						<br><br><br>
+						
+						<!-- 수입/지출 수정 및 삭제 -->
+						<div style="margin: 30px;">
+							<div id="d1">
+							<h4 style="font-weight: bold;">수입 / 지출 수정</h4>
+							<form action="update_account.multi">
+							<table style="width: 500px;">
+								<tr>
+									<td colspan="2"><input type="hidden" class="form-control no-line" name="id" id="id"
+										style="height: 50px;"></td>
+								</tr>
+							</table>
+							<table style="width: 500px;">
+								<tr>
+									<td style="width: 100px;">날짜</td>
+									<td><input type="date" class="form-control no-line" name="paydate" id="paydate"
+										style="height: 50px;"></td>
+								</tr>
+							</table>
+							<br>
+							<table style="width: 500px;">
+								<tr>
+									<td style="width: 100px;">분류</td>
+									<td>
+									<td><label class="radio-inline"
+										style="margin-right: 100px;"> <input type="radio"
+											name="payselect" id="payselect1" value="수입" checked> 수입
+									</label> <label class="radio-inline"> <input type="radio"
+											name="payselect" id="payselect2" value="지출"> 지출
+									</label></td>
+								</tr>
+							</table>
+							<br>
+							<table style="width: 500px;">
+								<tr>
+									<td style="width: 100px;">카테고리</td>
+									<td><select name="category" id="category" class="custom-select no-line">
+											<option selected></option>
+											<option value="food">식비</option>
+											<option value="trans">교통비</option>
+											<option value="medi">의료비</option>
+											<option value="lels">여가</option>
+											<option value="etc">기타</option>
+									</select></td>
+								</tr>
+							</table>
+							<br>
+							<table style="width: 500px;">
+								<tr>
+									<td style="width: 100px;">금액</td>
+									<td><input type="text" class="form-control no-line" name="amount" id="amount"></td>
+								</tr>
+							</table>
+							<br>
+							<table style="width: 500px;">
+								<tr>
+									<td style="width: 100px;">내용</td>
+									<td><input type="text" class="form-control no-line" name="memo" id="memo"></td>
+								</tr>
+							</table>
+							<br> 
+							<div style="float: left;">
+								<button type="submit" class="btn-green" style="width: 240px;">수정</button>
+							</div>
+						</form>
+						<form action="delete_account.multi">
+							<input type="hidden" name="id" id="idDel">
+							<button type="submit" class="btn-green" style="width: 240px; margin-left: 5px;">삭제</button>
+						</form>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div class="tab-content">
-			</div>
-			<div class="tab-content">
-				<!-- 통계 페이지 -->
-			</div>
-			<div class="tab-content">
-				<!-- 목표 지출 페이지 -->
-			</div>
 		</div>
-
-
 	</div>
 </body>
 </html>
