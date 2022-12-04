@@ -1,0 +1,20 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+ <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<c:forEach var="vo" items="${list2}">
+	지출,수입 : ${vo.payselect} <br>
+	카테고리 : ${vo.category} <br>
+	금액 : ${vo.amount} <br>
+	메모 : ${vo.memo} <br>
+	<hr>
+	</c:forEach>
+
+</body>
+</html>

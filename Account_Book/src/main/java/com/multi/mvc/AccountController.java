@@ -19,5 +19,11 @@ public class AccountController {
 		model.addAttribute("list",list);	
 	}
 	
+	@RequestMapping("daylist")
+	public void dayall(AccountVO vo, Model model) {
+		List<AccountVO> list= dao.dayall(vo);
+		System.out.print(list);
+		model.addAttribute("list", list);
+	}
 	
 }

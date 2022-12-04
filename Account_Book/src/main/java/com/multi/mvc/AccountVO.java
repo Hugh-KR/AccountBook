@@ -4,12 +4,20 @@ public class AccountVO {
 	private String paydate;
 	private String payment;
 	private String category;
+	private String payselect;
 	private int amount;
 	private String memo;
 	private int deposit;
 	private int withdraw;
 	
 	
+	
+	public String getPayselect() {
+		return payselect;
+	}
+	public void setPayselect(String payselect) {
+		this.payselect = payselect;
+	}
 	public String getPaydate() {
 		return paydate;
 	}

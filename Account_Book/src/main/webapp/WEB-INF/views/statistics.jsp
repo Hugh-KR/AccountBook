@@ -62,6 +62,13 @@ int intToday = Integer.parseInt(sdf.format(todayCal.getTime())); //날짜를 인
 
 	
 	</script>
+	<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js">
+</script>
+
+	<script>
+	
+	</script>
 	<style TYPE="text/css">
 		body {
 		scrollbar-face-color: #F6F6F6;
@@ -72,6 +79,7 @@ int intToday = Integer.parseInt(sdf.format(todayCal.getTime())); //날짜를 인
 		scrollbar-track-color: #FFFFFF;
 		scrollbar-arrow-color: #bbbbbb;
 		margin-left:"0px"; margin-right:"0px"; margin-top:"0px"; margin-bottom:"0px";
+		
 		}
 
 		td {font-family: "돋움"; font-size: 9pt; color:#595959;}
@@ -120,7 +128,7 @@ A:hover { font-size:9pt; font-family:"돋움";color:red;text-decoration:none;}
 
 	%>
 <form name="calendarFrm" id="calendarFrm" action="" method="post"> 
-<DIV id="content" style="width:712px;">
+<DIV id="content" style="width:712px; text-align: center; margin:0 auto;">
 
 <table width="100%" border="0" cellspacing="1" cellpadding="1">
 <tr>
@@ -229,9 +237,9 @@ for(int index = 1; index <= endDay; index++)
 {
 	String color = "";
 
-	if(newLine == 0){			color = "RED";
-	}else if(newLine == 6){ 	color = "#529dbc";
-	}else{						color = "BLACK"; };
+	if(newLine == 0){			color = "RED"; // 일요일 
+	}else if(newLine == 6){ 	color = "#529dbc"; // 토요일일때 색변경
+	}else{						color = "BLACK"; }; // 평일 
 
 	String sUseDate = Integer.toString(year);
 
@@ -240,7 +248,9 @@ for(int index = 1; index <= endDay; index++)
 
 	int iUseDate = Integer.parseInt(sUseDate);
 	
-	System.out.println(sUseDate +" "+iUseDate );
+	
+	//System.out.println(sUseDate +" "+iUseDate );
+	System.out.println("인덱스"+index);
 	
 	
 	String backColor = "#EFEFEF";
@@ -251,7 +261,7 @@ for(int index = 1; index <= endDay; index++)
 	
 	%>
 	<font color='<%=color%>'>
-		<%=index %>
+		<%=index %> <!-- 날짜 출력구간 -->
 	</font>
 	
 	<!--  1) s="2022-01-02"  String[] s2 = s.split("-") 배열을 arraylist로 변경해서, toString) -->
@@ -270,8 +280,7 @@ for(int index = 1; index <= endDay; index++)
 	}
 	
 	
-//+${vo.deposit }<br>
-	//-${vo.withdraw }<br> 
+
 		
 	//기능 제거	
 	out.println("</TD>");

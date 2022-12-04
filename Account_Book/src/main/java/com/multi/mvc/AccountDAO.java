@@ -16,6 +16,10 @@ public class AccountDAO {
 		return my.selectList("account.statistics");
 	}
 	
+	public List<AccountVO> dayall(AccountVO vo){
+		return my.selectList("account.daylist",vo);
+	}
+	
 	
 	
 	

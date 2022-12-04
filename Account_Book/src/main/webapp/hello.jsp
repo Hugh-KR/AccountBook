@@ -10,5 +10,10 @@
 <form action="statistics">
 <button>통계확인</button>
 </form>
+
+<form action="daylist">
+날짜 <input name="paydate">
+<button>날짜별 확인</button>
+</form>
 </body>
 </html>

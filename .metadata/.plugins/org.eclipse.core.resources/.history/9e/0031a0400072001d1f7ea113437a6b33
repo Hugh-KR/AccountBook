@@ -1,0 +1,15 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+payselect : ${vo.payselect} <br>
+카테고리 : ${vo.category} <br>
+금액 : ${vo.amount} <br>
+메모 : ${vo.memo} <br>
+</body>
+</html>
