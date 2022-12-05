@@ -15,7 +15,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <script>
 	/* 메뉴 클릭 시 이벤트 -> 해당 메뉴에 대한 content 출력 */
-	$(function($) {
+	$(function() {
 		$(".tab-content").eq(0).show(0); // 첫번째 tab 보여줌
 		$(".tab-ul li").click(function() { // li 클릭하면
 			var idx = $(this).index(); // tab-ul li 중 클릭한 것이 몇 번째인지 확인
@@ -35,7 +35,7 @@
 		});
 	});
 	/* 수입/지출 클릭 시 이벤트 */
-	$(function($) {
+	$(function() {
 		$(".tab-content2").eq(0).show(0); // 첫번째 tab 보여줌
 		$(".tab-ul2 li").click(function() { // li 클릭하면
 			var idx = $(this).index(); // tab-ul2 li 중 클릭한 것이 몇 번째인지 확인
@@ -89,6 +89,7 @@
 			$('#amount').attr('value', amount);  // 금액 input value에 amountVal 값 넣기
 			
 			$('#idDel').attr('value', idVal);  // delete 버튼이 있는 form input에 삭제할 id setting
+			
 			/* var data = {
 					paydate : $(this).find("td:eq(0)").text(),
 					payselect : $(this).find("td:eq(1)").text(),
@@ -140,30 +141,31 @@
 								<br>
 								<h4>총액</h4>
 								<%
-								List<AccountVO> list = (List<AccountVO>)request.getAttribute("list");
+								List<AccountVO> list = (List<AccountVO>)request.getAttribute("list");  // 받아온 모델 list에 저장
 								
-								int total = 0;
-								for(int i=0; i<list.size(); i++){
-									if(list.get(i).getPayselect().equals("지출")){
-										total = total + (list.get(i).getAmount() * -1);
-									} else{
-										total = total + list.get(i).getAmount();
+								int total = 0;  // total 값 계산할 변수 초기화
+								for(int i=0; i<list.size(); i++){  // list 크기만큼 반복 (list의 모든 값 더하기)
+									if(list.get(i).getPayselect().equals("지출")){  // payselect가 지출이면
+										total = total + (list.get(i).getAmount() * -1);  // -1을 곱해서 음수로 만들어준 뒤 total 값에 더해줌
+									} else{  // 수입이면
+										total = total + list.get(i).getAmount();  // total 값에 더해줌
 									}
 								}
 								%>
-								<h1><fmt:formatNumber value="<%= total %>" pattern="#,###"/></h1>
+								<h1><fmt:formatNumber value="<%= total %>" pattern="#,###"/></h1>  <!-- 숫자 세 자리 단위로 콤마 찍기 -->
 								<br>
 								<table>
 									<tr>
-										<td><input type="text" class="form-control" placeholder="YYYY-MM"></td>
-										<td><button class="btn-green" style="width: 80px; height: 38px;">선택</button></td>
+										<td><input type="text" class="form-control" placeholder="YYYY-MM" id="monthVal"></td>
+										<td><button class="btn-green" style="width: 80px; height: 38px;" id="chooseMonth">선택</button></td>
 									</tr>
 								</table> <br>
 								<div style="height: 600px; overflow: auto;">
 								<table class="table table-hover" id=tableList>
 									<thead>
 										<tr>
-											<th>No</th>
+											<!-- id는 행 구분하려고 만들었으므로 안보이게 하기 -->
+											<th style="display: none;">No</th>
 											<th>날짜</th>
 											<th>분류</th>
 											<th>카테고리</th>
@@ -174,7 +176,8 @@
 									<tbody>
 										<c:forEach var="vo" items="${list}">
 											<tr>
-												<td>${vo.id}</td>
+												<!-- id는 행 구분하려고 만들었으므로 안보이게 하기 -->
+												<td style="display: none;">${vo.id}</td>
 												<td>${vo.paydate}</td>
 												<td>${vo.payselect}</td>
 												<td>${vo.category}</td>
@@ -314,7 +317,7 @@
 							</div>
 						</form>
 						<form action="delete_account.multi">
-							<input type="hidden" name="id" id="idDel">
+							<input type="hidden" name="id" id="idDel"> <!-- id 값 숨겨서 delet_account.multi로 submit (id 값은 변경하면 안되므로) -->
 							<button type="submit" class="btn-green" style="width: 240px; margin-left: 5px;">삭제</button>
 						</form>
 							</div>

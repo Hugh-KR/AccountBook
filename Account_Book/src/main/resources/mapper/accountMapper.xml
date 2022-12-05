@@ -1,21 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="accountMapper">
+	<!-- 수입/지출 추가 -->
 	<insert id="create" parameterType="accountVO">
-		insert into accountbook2 values (#{id}, #{paydate}, #{payselect}, #{category}, #{amount}, #{memo})
+		insert into accountbook values (#{id}, #{paydate}, #{payselect}, #{category}, #{amount}, #{memo})
 	</insert>
+	<!-- 수입/지출 전체 조회 (날짜순) -->
 	<select id="all" resultType="accountVO">
-		select * from accountbook2
+		select * from accountbook order by paydate
 	</select>
+	<!-- 수입만 날짜순으로 조회 -->
 	<select id="all_income" resultType="accountVO">
-		select * from accountbook2 where payselect='수입'
+		select * from accountbook where payselect='수입' order by paydate
 	</select>
+	<!-- 지출만 날짜순으로 조회  -->
 	<select id="all_expense" resultType="accountVO">
-		select * from accountbook2 where payselect='지출'
+		select * from accountbook where payselect='지출' order by paydate
 	</select>
+	<!-- 수입/지출 수정 -->
 	<update id="up" parameterType="accountVO">
-		update accountbook2 set paydate = #{paydate}, category = #{category}, amount = #{amount}, memo = #{memo} where id = #{id}
+		update accountbook set paydate = #{paydate}, payselect= #{payselect}, category = #{category}, amount = #{amount}, memo = #{memo} where id = #{id}
 	</update>
+	<!-- 수입/지출 삭제 -->
 	<delete id="del" parameterType="accountVO">
 		delete from accountbook2 where id = #{id}
 	</delete>

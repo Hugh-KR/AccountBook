@@ -145,7 +145,7 @@
 								<table class="table table-hover" id=tableList>
 									<thead>
 										<tr>
-											<th>No</th>
+											<th style="display: none;">No</th>
 											<th>날짜</th>
 											<th>카테고리</th>
 											<th>내용</th>
@@ -155,7 +155,7 @@
 									<tbody>
 										<c:forEach var="vo" items="${list}">
 											<tr>
-												<td>${vo.id}</td>
+												<td style="display: none;">${vo.id}</td>
 												<td>${vo.paydate}</td>
 												<td>${vo.category}</td>
 												<td>${vo.memo}</td>

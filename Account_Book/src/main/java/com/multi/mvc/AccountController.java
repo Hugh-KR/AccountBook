@@ -20,33 +20,35 @@ public class AccountController {
 		return "redirect:account.jsp";
 	}
 
-	// 전체 출력
+	// 수입/지출 전체 조회 (날짜순)
 	@RequestMapping("all.multi")
 	public void all(Model model) {
 		List<AccountVO> list = dao.all();
 		model.addAttribute("list", list);
 	}
 
-	// 수입 목록 전체 출력
+	// 수입만 날짜순으로 조회
 	@RequestMapping("all_income.multi")
 	public void all_income(Model model) {
 		List<AccountVO> list = dao.all_income();
 		model.addAttribute("list", list);
 	}
 
-	// 지출 목록 전체 출력
+	// 지출만 날짜순으로 조회
 	@RequestMapping("all_expense.multi")
 	public void all_expense(Model model) {
 		List<AccountVO> list = dao.all_expense();
 		model.addAttribute("list", list);
 	}
-
+	
+	// 수입/지출 수정
 	@RequestMapping("update_account.multi")
 	public String update_account(AccountVO vo) {
 		dao.update(vo);
 		return "redirect:account.jsp";
 	}
 	
+	// 수입/지출 삭제
 	@RequestMapping("delete_account.multi")
 	public String delete_account(AccountVO vo) {
 		dao.delete(vo);

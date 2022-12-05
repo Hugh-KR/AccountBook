@@ -130,7 +130,7 @@
 								<table class="table table-hover" id=tableList>
 									<thead>
 										<tr>
-											<th>No</th>
+											<th style="display: none;">No</th>
 											<th>날짜</th>
 											<th>내용</th>
 											<th>금액</th>
@@ -139,7 +139,7 @@
 									<tbody>
 										<c:forEach var="vo" items="${list}">
 											<tr>
-												<td>${vo.id}</td>
+												<td style="display: none;">${vo.id}</td>
 												<td>${vo.paydate}</td>
 												<td>${vo.memo}</td>
 												<td><fmt:formatNumber value="${vo.amount}" pattern="#,###"/></td> <!-- 숫자 세 자리 단위로 콤마 찍기 -->
