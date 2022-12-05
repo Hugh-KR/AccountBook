@@ -62,6 +62,13 @@ int intToday = Integer.parseInt(sdf.format(todayCal.getTime())); //날짜를 인
 
 	
 	</script>
+	<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js">
+</script>
+
+	<script>
+	
+	</script>
 	<style TYPE="text/css">
 		body {
 		scrollbar-face-color: #F6F6F6;
