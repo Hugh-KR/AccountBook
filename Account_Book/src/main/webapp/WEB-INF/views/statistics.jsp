@@ -53,6 +53,8 @@ int intToday = Integer.parseInt(sdf.format(todayCal.getTime())); //날짜를 인
 
 <html lang="ko">
 <HEAD>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 	<TITLE>캘린더</TITLE>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -134,7 +136,7 @@ A:hover { font-size:9pt; font-family:"돋움";color:red;text-decoration:none;}
 <tr>
 	<td align ="right">
 	
-		<input type="button" onclick="javascript:location.href='<c:url value='./statistics' />'" value="오늘"/> <!-- 오늘날짜로 바로 이동하는 버튼 -->
+		<input type="button" class="btn btn-success" onclick="javascript:location.href='<c:url value='./statistics' />'" value="오늘"/> <!-- 오늘날짜로 바로 이동하는 버튼 -->
 	</td>
 
 </tr>
