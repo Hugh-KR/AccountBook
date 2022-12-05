@@ -186,7 +186,7 @@
 											<option value="food">식비</option>
 											<option value="trans">교통비</option>
 											<option value="medi">의료비</option>
-											<option value="lels">여가</option>
+											<option value="leis">여가</option>
 											<option value="etc">기타</option>
 									</select></td>
 								</tr>
@@ -253,7 +253,7 @@
 											<option value="food">식비</option>
 											<option value="trans">교통비</option>
 											<option value="medi">의료비</option>
-											<option value="lels">여가</option>
+											<option value="leis">여가</option>
 											<option value="etc">기타</option>
 									</select></td>
 								</tr>

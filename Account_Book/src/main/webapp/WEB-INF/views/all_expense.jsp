@@ -73,8 +73,8 @@
 				$('#category').val('trans').prop("selected",true);
 			} else if(categoryVal == "medi"){
 				$('#category').val('medi').prop("selected",true);
-			} else if(categoryVal == "lels"){
-				$('#category').val('lels').prop("selected",true);
+			} else if(categoryVal == "leis"){
+				$('#category').val('leis').prop("selected",true);
 			} else if(categoryVal == "etc"){
 				$('#category').val('etc').prop("selected",true);
 			} else{
@@ -202,7 +202,7 @@
 											<option value="food">식비</option>
 											<option value="trans">교통비</option>
 											<option value="medi">의료비</option>
-											<option value="lels">여가</option>
+											<option value="leis">여가</option>
 											<option value="etc">기타</option>
 									</select></td>
 								</tr>
@@ -269,7 +269,7 @@
 											<option value="food">식비</option>
 											<option value="trans">교통비</option>
 											<option value="medi">의료비</option>
-											<option value="lels">여가</option>
+											<option value="leis">여가</option>
 											<option value="etc">기타</option>
 									</select></td>
 								</tr>
