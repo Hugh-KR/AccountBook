@@ -30,7 +30,7 @@
 			} else if(idx == 2){ // 누른 버튼이 통계이면
 				location.href=""; // 통계 페이지 호출할 Controller 주소 입력!
 			} else{ // 누른 버튼이 목표지출이면
-				location.href="";  // 목표지출 페이지 호출할 Controller 주소 입력!
+				location.href="intro.jsp";  // 목표지출 페이지 호출할 Controller 주소 입력!
 			}
 		});
 	});

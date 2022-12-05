@@ -23,6 +23,6 @@
 	</update>
 	<!-- 수입/지출 삭제 -->
 	<delete id="del" parameterType="accountVO">
-		delete from accountbook2 where id = #{id}
+		delete from accountbook where id = #{id}
 	</delete>
 </mapper>

@@ -7,11 +7,11 @@
      별명을 지어서 사용 -->
    <typeAliases>
       <typeAlias type="com.multi.mvc.AccountVO" alias="accountVO"></typeAlias>
-      <typeAlias type="com.multi.mvc.TargetVO" alias="targetVO"></typeAlias>
+      <typeAlias type="com.multi.mvc.PurposeVO" alias="PurposeVO"></typeAlias>
    </typeAliases>
    <mappers>
    <!-- SQL문 정의하는 파일들의 목록을 지정. -->
       <mapper resource="mapper/accountMapper.xml" />
-      <mapper resource="mapper/targetMapper.xml" />
+      <mapper resource="mapper/purposeMapper.xml" />
    </mappers>
 </configuration>
