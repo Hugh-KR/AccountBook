@@ -1,6 +1,7 @@
 package com.multi.mvc;
 
 public class AccountVO {
+	private int id;
 	private String paydate;
 	private String payment;
 	private String category;
@@ -12,6 +13,12 @@ public class AccountVO {
 	
 	
 	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	public String getPayselect() {
 		return payselect;
 	}

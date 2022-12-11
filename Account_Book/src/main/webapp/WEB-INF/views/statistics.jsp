@@ -53,24 +53,43 @@ int intToday = Integer.parseInt(sdf.format(todayCal.getTime())); //날짜를 인
 
 <html lang="ko">
 <HEAD>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" type="text/css" href="resources/css/out.css">
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+<link rel='stylesheet'
+	href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+<link rel='stylesheet'
+	href='https://cdn-uicons.flaticon.com/uicons-regular-straight/css/uicons-regular-straight.css'>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+	
 	<TITLE>캘린더</TITLE>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8">
-
-
-	<script type="text/javaScript" language="javascript">
-
-
-	
-	</script>
-	<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js">
 </script>
 
-	<script>
-	
+<script type="text/javascript">
+$(function() {
+    $(".tab-content").eq(0).show(0); // 첫번째 tab 보여줌
+    $(".tab-ul li").click(function() { // li 클릭하면
+        var idx = $(this).index(); // tab-ul li 중 클릭한 것이 몇 번째인지 확인
+        $(".tab-content").hide(); // tab-content 숨김
+        $(".tab-content").eq(idx).show(); // 클릭한 것에 해당하는 tab-content 보여줌
+        $(".tab-ul li").removeClass("active"); // active 클래스 지워줌
+        $(this).addClass("active"); // 클릭한 것에 active 클래스 추가
+        if(idx == 0){  // 누른 버튼이 수입/지출 관리이면 
+            location.href="account.jsp";
+        } else if(idx == 1){  // 누른 버튼이 캘린더이면
+            location.href="calendar.jsp"; // 캘린더 페이지 호출할 Controller 주소 입력!
+        } else if(idx == 2){ // 누른 버튼이 통계이면
+            location.href=""; // 통계 페이지 호출할 Controller 주소 입력!
+        } else{ // 누른 버튼이 목표지출이면
+            location.href="intro.jsp";  // 목표지출 페이지 호출할 Controller 주소 입력!
+        }
+    });
+});
 	</script>
+	
 	<style TYPE="text/css">
 		body {
 		scrollbar-face-color: #F6F6F6;
@@ -101,36 +120,56 @@ A:hover { font-size:9pt; font-family:"돋움";color:red;text-decoration:none;}
 
 
 	</style>
+	<script type="text/javascript" src="resources/js/jquery-3.6.1.js"></script>
 </HEAD>
 <BODY>
 
 	<%
 	List<AccountVO> list = (List<AccountVO>)request.getAttribute("list");
 
- 	ArrayList<String> todays = new ArrayList<String>();
- 	ArrayList<Integer> deposits = new ArrayList<Integer>();
- 	ArrayList<Integer> withdraws = new ArrayList<Integer>();
+ 	ArrayList<String> todays = new ArrayList<String>(); //날짜 
+ 	ArrayList<Integer> deposits = new ArrayList<Integer>(); // 입금
+ 	ArrayList<Integer> withdraws = new ArrayList<Integer>(); // 출금 
  	for(int i = 0; i<list.size(); i++){
  		String to1 = list.get(i).getPaydate();
+ 		String to2 = to1.replaceAll("-", ""); // 2022-11-11 --> 20221111 로 변경
+ 		//System.out.println("바뀜1"+ to2);
  		int de1 = list.get(i).getDeposit();
  		int wi1 = list.get(i).getWithdraw();
- 		todays.add(to1);
+ 		todays.add(to2);
  		deposits.add(de1);
  		withdraws.add(wi1);
- 		System.out.println("삽입후 "+ todays);
+ 		
+ 		/* System.out.println("삽입후 "+ todays);
  		System.out.println("삽입후1 "+ deposits);
- 		System.out.println("삽입후2 "+ withdraws);
+ 		System.out.println("삽입후2 "+ withdraws); */
  	}
  	
  	/* for(int i = 0; i<todays.size(); i++){
  		System.out.println("하나씩"+todays.get(i));
  	}
  	 */
-	 
-
 	%>
+	<div class="total">
+		<!-- 메뉴 -->
+		<div class="menu">
+			<h2 style="margin-left: 30px; margin-top: 20px;">
+				<i class="fi fi-rr-money-check-edit"></i>가계부
+			</h2>
+			<ul class="tab-ul">
+				<li><a id="tab1"><i class="fi fi-rr-add"></i>수입/지출
+						관리</a></li>
+				<li class="active"><a id="tab2"><i class="fi fi-rs-calendar-check"></i>캘린더</a>
+				</li>
+				<li><a id="tab3"><i class="fi fi-rs-chart-histogram"></i>통계</a>
+				</li>
+				<li ><a id="tab4"><i class="fi fi-rr-coins"></i>목표 지출</a></li>
+			</ul>
+		</div>
+	
 <form name="calendarFrm" id="calendarFrm" action="" method="post"> 
-<DIV id="content" style="width:712px; text-align: center; margin:0 auto;">
+<div class="content">
+<!-- <DIV id="content" style="width:712px; text-align: center; margin:0 auto;"> -->
 
 <table width="100%" border="0" cellspacing="1" cellpadding="1">
 <tr>
@@ -251,8 +290,8 @@ for(int index = 1; index <= endDay; index++)
 	int iUseDate = Integer.parseInt(sUseDate);
 	
 	
-	//System.out.println(sUseDate +" "+iUseDate );
-	System.out.println("인덱스"+index);
+	System.out.println(sUseDate +" "+iUseDate );
+	//System.out.println("인덱스"+index);
 	
 	
 	String backColor = "#EFEFEF";
@@ -262,8 +301,11 @@ for(int index = 1; index <= endDay; index++)
 	out.println("<TD valign='top' align='left' height='92px' bgcolor='"+backColor+"' nowrap>");
 	
 	%>
+	
+
+</script>
 	<font color='<%=color%>'>
-		<%=index %> <!-- 날짜 출력구간 -->
+		<%=index %><!-- 날짜 출력구간 -->
 	</font>
 	
 	<!--  1) s="2022-01-02"  String[] s2 = s.split("-") 배열을 arraylist로 변경해서, toString) -->
@@ -310,9 +352,8 @@ while(newLine > 0 && newLine < 7)
 
 </TBODY>
 </TABLE>
-</DIV>
+</div>
 </form>
-<br> 
-
+</div>
 </BODY>
 </HTML>

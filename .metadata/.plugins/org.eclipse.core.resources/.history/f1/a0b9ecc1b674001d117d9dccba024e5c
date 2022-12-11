@@ -1,0 +1,27 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<table border="1">
+<tr>
+<th colspan="4">${vo.paydate} 사용 내역</th>
+</tr>
+<tr>
+	<td>수입 또는 지출</td>
+	<td>금액</td>
+	<td>사용처</td>
+	<td>비고</td>
+</tr>
+
+<c:forEach var="vo" items="${list2}">
+<tr>
+	<td>${vo.payselect}</td>
+	<td>${vo.amount} </td>
+	<td>${vo.category} </td>
+	<td>${vo.memo}  </td>
+	</tr>
+	</c:forEach>
+
+</table>
+
+
